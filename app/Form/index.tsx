@@ -17,7 +17,7 @@ export default function Form() {
 
   return (
     <FormProvider {...methods}>
-      <form className="flex flex-col gap-8">
+      <form className="flex flex-col gap-8 border-y py-8 border-black">
         <FormHeadingUI />
         <Input inputType="password" clearable={true} />
       </form>

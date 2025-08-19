@@ -11,7 +11,7 @@ export default function SidebarVisibilityButton() {
   return (
     <button
       className={clsx(
-        "[&>*]:w-8 [&>*]:h-1 [&>*]:bg-black w-full h-full flex flex-col gap-2 duration-200 z-10"
+        "[&>*]:w-8 [&>*]:h-1 [&>*]:bg-black w-full flex flex-col gap-2 duration-200 z-10"
       )}
       onClick={toggleSidebarShown}
     >

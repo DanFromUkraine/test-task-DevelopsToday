@@ -42,8 +42,8 @@ export default function ToastBody(
       className={clsx(
         "toast w-full h-fit border-2 border-black rounded-xl p-8",
         {
-          "animate-toast-out": !toastVisible,
-          "animate-toast-in": toastVisible,
+          "slide-out-x": !toastVisible,
+          "slide-in-x": toastVisible,
         }
       )}
     >

@@ -10,9 +10,13 @@ export default function SidebarBody() {
 
   return (
     <div
-      className={clsx("flex flex-col w-full h-full", {
-        invisible: !sidebarShown,
-      })}
+      className={clsx(
+        "flex flex-col w-full h-screen px-4 gap-2 absolute pt-20 right-0 border-l will-change-transform border-black",
+        {
+          "slide-out-x": !sidebarShown,
+          "slide-in-x": sidebarShown,
+        }
+      )}
     >
       <SubMenuContainer
         subMenuHeading="SubMenu 1"

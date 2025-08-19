@@ -1,27 +1,20 @@
 @import "tailwindcss";
 
-@keyframes toast-in-right {
-  0% {
-    transform: translateX(120%);
-    opacity: 0;
-  }
-  60% {
-    transform: translateX(-2%);
-  }
-  100% {
+@keyframes slideFromRightX {
+  from {
+    transform: translateX(350px);
+  } /* зміщення вправо на 250px */
+  to {
     transform: translateX(0);
-    opacity: 1;
   }
 }
 
-@keyframes toast-out-right {
-  0% {
+@keyframes slideToRightX {
+  from {
     transform: translateX(0);
-    opacity: 1;
   }
-  100% {
-    transform: translateX(120%);
-    opacity: 0;
+  to {
+    transform: translateX(400px);
   }
 }
 
@@ -38,13 +31,12 @@
     background-color: white;
   }
 
-  .animate-toast-in {
-    animation: toast-in-right 320ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-    will-change: transform, opacity;
+  .slide-in-x {
+    animation: slideFromRightX 300ms ease-out forwards;
+    transform-origin: right;
   }
-
-  .animate-toast-out {
-    animation: toast-out-right 240ms cubic-bezier(0.4, 0, 1, 1) both;
-    will-change: transform, opacity;
+  .slide-out-x {
+    animation: slideToRightX 240ms ease-in forwards;
+    transform-origin: right;
   }
 }

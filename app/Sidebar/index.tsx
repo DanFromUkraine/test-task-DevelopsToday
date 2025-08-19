@@ -6,7 +6,7 @@ export default function SidebarContainer() {
   return (
     <SidebarContextProvider>
       <nav
-        className="sticky top-0 right-0 flex flex-col  py-8 px-4 w-[210px]
+        className="sticky overflow-hidden h-screen top-0 right-0 flex flex-col gap-8 px-4 w-[210px]
   "
       >
         <SidebarVisibilityButton />

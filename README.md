@@ -119,13 +119,14 @@ Example State 2
 
 ---
 
-Notes
+I spent about 2 hours setting up Storybook (I really hate Webpack), because by default it tried to compile using the Next.js Webpack (Turbopack?) compiler. After reinstalling node_modules five times and switching the framework from "next" to "next-vite", it finally started working.
 
-Times are approximate and exclude Storybook setup time (unless specified).
+Overall, I enjoyed this test assessment — it forced me to solve problems I had previously skipped over. It really pushed me to the limits (with only 2 days, I ended up coding at least 10–11 hours in general), and it taught me how to use Storybook (which I actually learned just this morning).
 
-Property names shown above reflect the component API used in the examples (e.g. toastAppearanceDuration, clearable, animationType).
+I completed almost all of the requirements from the instructions, including the bonus ones.
 
-For more examples and interactive testing, open Storybook with pnpm storybook.
+Looking forward to your enhance feedback!
+
 
 ```
 

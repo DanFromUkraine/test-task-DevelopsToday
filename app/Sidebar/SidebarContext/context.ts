@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
 import { createContext, use } from "react";
 
 export interface SidebarContextDataShape {
-  sidebarShown: boolean;
+  sidebarShown: boolean | null;
   toggleSidebarShown: () => void;
 }
 

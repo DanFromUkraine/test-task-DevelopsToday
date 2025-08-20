@@ -19,13 +19,15 @@ function RenderSubMenusAndSubItems({ list }: { list: Menu }) {
 export default function SidebarBody({ list }: { list: Menu }) {
   const { sidebarShown } = useSidebarContext();
 
+  const canBeVisible = sidebarShown !== null;
+
   return (
     <div
       className={clsx(
-        "flex flex-col w-full h-screen px-4 gap-2 absolute pt-20 right-0 border-l will-change-transform border-black",
+        "flex flex-col w-full h-screen px-4 gap-2 absolute pt-20 right-0 invisible border-l will-change-transform border-black",
         {
-          "toast--leave": !sidebarShown,
-          "toast--enter": sidebarShown,
+          "toast--leave !visible": !sidebarShown && canBeVisible,
+          "toast--enter visible": sidebarShown,
         }
       )}
     >

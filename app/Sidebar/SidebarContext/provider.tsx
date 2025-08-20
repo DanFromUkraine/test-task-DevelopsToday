@@ -8,10 +8,10 @@ export default function SidebarContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const [sidebarShown, setSidebarShown] = useState(false);
+  const [sidebarShown, setSidebarShown] = useState<boolean | null>(null);
 
   const toggleSidebarShown = useCallback(() => {
-    setSidebarShown((prev) => !prev);
+    setSidebarShown((prev) => !Number(prev));
   }, []);
 
   return (

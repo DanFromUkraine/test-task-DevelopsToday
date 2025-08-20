@@ -12,11 +12,15 @@ type SubMenu = {
 
 export type Menu = (SubMenu | SubItem)[];
 
-
-
-export default function SidebarContainer({ list }: { list: Menu }) {
+export default function SidebarContainer({
+  list,
+  visibleByDefault,
+}: {
+  list: Menu;
+  visibleByDefault: boolean;
+}) {
   return (
-    <SidebarContextProvider>
+    <SidebarContextProvider visibleByDefault={visibleByDefault}>
       <PageBlur />
       <nav
         className="fixed z-10 bg-white overflow-hidden h-screen top-0 right-0 flex flex-col gap-8 px-4 w-[210px]

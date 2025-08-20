@@ -54,3 +54,51 @@ toastAppearenceDuration = 5 000ms
 clearable = true
 animationType = fade
 ![alt text](image-11.png)
+
+
+Sidebar Component:
+
+Description:
+This component can be fascinating under the hood. And I don't know - either this my ingenuity, neither sillyness. But anyway, I implemented animatino of expeding and collapsing sub menus with requestAnimationFrame. It works perfectly, and as I know there were no other way to animate such thing with pure css (Considering transition from height:0 to the state of height: auto. If needed so, it's possible to take elements height via js and animate (I did so) )
+
+States:
+
+State 1:
+
+visibleByDefault = true
+list = [
+  {
+    subMenuHeading: "Sub menu 1",
+    subItems: ["item 1", "item 2", "item 3"],
+  },
+
+  {
+    subMenuHeading: "Sub menu 2",
+    subItems: ["item 4", "item 5", "item 6"],
+  },
+
+  {
+    subMenuHeading: "Sub menu 3",
+    subItems: ["item 7", "item 8", "item 9"],
+  },
+  "item 10",
+  "item 11",
+];
+
+![alt text](image-13.png)
+
+
+State 2:
+
+visibleByDefault = true
+list: [
+  "item 1",
+  "item 2",
+  "item 3",
+  "item 4",
+  "item 5",
+  "item 6",
+];
+
+![alt text](image-14.png)
+![alt text](image-15.png)

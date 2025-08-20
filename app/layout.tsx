@@ -8,7 +8,7 @@ export default function layout({ children }: { children: ReactNode }) {
     <html lang="uk">
       <body className="flex">
         <div className="flex flex-col">{children}</div>{" "}
-        <SidebarContainer list={menuWithTwoLevels} />
+        <SidebarContainer list={menuWithTwoLevels} visibleByDefault={false} />
       </body>
     </html>
   );

@@ -1,104 +1,166 @@
-Setup instructions:
+# Components Showcase
 
-1. Initialize project: pnpm install
-2. Open dev version of a project locally: pnpm dev
-3. Open storybook admin panel: pnpm storybook
+## Setup
 
-Form Text Input Component:
+```bash
+# Install dependencies
+pnpm install
 
-Description:
-This is a component that uses react-hook-form. It's quite simple, but also uses FormProvider, to share FormContext. It was probably the easiest one from all of them. It took no more than an hour to complete it (I don't include time spended on configuration of Storybook)
+# Run development server
+pnpm dev
 
-It has 6 state combinations, but I'll show only 3
-
-State 1:
-input type = "text"
-clearable = false
-![alt text](image-7.png)
-![alt text](image-2.png)
-
-State 2:
-input type = "password"
-clearable = true
-![alt text](image-8.png)
-![alt text](image-4.png)
-
-State 3:
-input type = "number"
-clearable = false
-![alt text](image-5.png)
-![alt text](image-6.png)
-
-Toast Component:
-
-Description:
-At first it looked like a simple task, but due to fade animation, it was quite complex. Implementation may look simple, so you probably wondering, what was so difficult, but I wasted too much of time figuring out, that I can use decremental z-index to hide Toast component after animation. And it wouldn't be so difficult, if at first I didn't try to fix the bag with Toast flinching on the page after every reload only with CSS.
-
-This component has infinite number of configurations, considering time parameter, but I show you only 3 of them:
-
-State 1:
-toastAppearenceDuration = 5 000ms
-clearable = true
-animationType = slide
-![alt text](image-9.png)
-
-State 2:
-toastAppearenceDuration = 3 000ms
-clearable = false
-animatinoType = slide
-![alt text](image-10.png)
-
-State 3:
-
-toastAppearenceDuration = 5 000ms
-clearable = true
-animationType = fade
-![alt text](image-11.png)
+# Open Storybook admin panel
+pnpm storybook
 
 
-Sidebar Component:
+---
 
-Description:
-This component can be fascinating under the hood. And I don't know - either this my ingenuity, neither sillyness. But anyway, I implemented animatino of expeding and collapsing sub menus with requestAnimationFrame. It works perfectly, and as I know there were no other way to animate such thing with pure css (Considering transition from height:0 to the state of height: auto. If needed so, it's possible to take elements height via js and animate (I did so) )
+Form Text Input Component
 
-States:
+Estimated time spent: ~1 hour
 
-State 1:
+Description
+This is a simple input component built with react-hook-form. It uses FormProvider to share the form context. It was one of the easier components to implement (time above does not include Storybook configuration).
 
-visibleByDefault = true
-list = [
+It has 6 state combinations; below are 3 examples.
+
+State 1
+
+input type: text
+
+clearable: false
+
+
+
+
+
+State 2
+
+input type: password
+
+clearable: true
+
+
+
+
+
+State 3
+
+input type: number
+
+clearable: false
+
+
+
+
+
+
+---
+
+Toast Component
+
+Estimated time spent: ~2 hours
+
+Description
+Initially this looked like a simple task, but the fade animation added complexity. I spent a lot of time discovering that a decrementing z-index can be used to hide the Toast after the animation completes. The bug where the Toast would "flinch" on page reload was tricky to fix with CSS alone.
+
+This component supports many configurations (especially around duration); below are 3 examples.
+
+State 1
+
+toastAppearanceDuration: 5000 ms
+
+clearable: true
+
+animationType: slide
+
+
+
+
+State 2
+
+toastAppearanceDuration: 3000 ms
+
+clearable: false
+
+animationType: slide
+
+
+
+
+State 3
+
+toastAppearanceDuration: 5000 ms
+
+clearable: true
+
+animationType: fade
+
+
+
+
+
+---
+
+Sidebar Component
+
+Estimated time spent: ~3.5 hours
+
+Description
+This component includes an animation for expanding and collapsing submenus implemented with requestAnimationFrame. I implemented a JS-based height measurement and animation because transitioning reliably from height: 0 to height: auto with pure CSS was not suitable for this use case.
+
+Example State 1
+
+visibleByDefault: true
+
+list:
+
+[
   {
     subMenuHeading: "Sub menu 1",
     subItems: ["item 1", "item 2", "item 3"],
   },
-
   {
     subMenuHeading: "Sub menu 2",
     subItems: ["item 4", "item 5", "item 6"],
   },
-
   {
     subMenuHeading: "Sub menu 3",
     subItems: ["item 7", "item 8", "item 9"],
   },
   "item 10",
   "item 11",
-];
-
-![alt text](image-13.png)
+]
 
 
-State 2:
 
-visibleByDefault = true
-list: [
+
+Example State 2
+
+visibleByDefault: true
+
+list:
+
+[
   "item 1",
   "item 2",
   "item 3",
   "item 4",
   "item 5",
   "item 6",
-];
+]
 
-![alt text](image-14.png)
-![alt text](image-15.png)
+
+
+
+
+
+---
+
+Notes
+
+Times are approximate and exclude Storybook setup time (unless specified).
+
+Property names shown above reflect the component API used in the examples (e.g. toastAppearanceDuration, clearable, animationType).
+
+For more examples and interactive testing, open Storybook with pnpm storybook.

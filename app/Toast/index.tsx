@@ -1,14 +1,14 @@
 import ShowToastButton from "./ShowToastButton";
-import ToastBody from "./ToastBody";
+import ToastBody, { ToastBodyProps } from "./ToastBody";
 import ToastContextProvider from "./ToastContext/provider";
 
-export default function Toast() {
+export default function Toast(forwardProps: ToastBodyProps) {
   return (
     <ToastContextProvider>
       <div className="flex flex-col gap-8 ">
         <ToastSectionHeading />
         <ShowToastButton />
-        <ToastBody toastAppearenceDuration={5_000} />
+        <ToastBody {...forwardProps} />
       </div>
     </ToastContextProvider>
   );

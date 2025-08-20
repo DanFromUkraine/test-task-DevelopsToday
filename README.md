@@ -15,7 +15,7 @@ clearable = false
 State 2:
 input type = "password"
 clearable = true
-![alt text](image-3.png)
+![alt text](image-8.png)
 ![alt text](image-4.png)
 
 State 3:

@@ -1,37 +1,23 @@
 "use client";
 
-import Image from "next/image";
-import { useToastContext } from "../ToastContext/context";
 import clsx from "clsx";
-import { useEffect } from "react";
+import { useToastContext } from "../ToastContext/context";
+import { useHideToastBodyOnTimeout } from "./client";
+import { ToastBodyContentUI, ToastBodyHeadingUI } from "./UI";
 
-function useHideToastBodyOnTimeout({
-  toastAppearenceDuration,
-  toastVisible,
-  hideToast,
-}: {
+export type ToastBodyProps = {
   toastAppearenceDuration: number;
-  toastVisible: boolean;
-  hideToast: () => void;
-}) {
-  useEffect(() => {
-    if (toastVisible) {
-      setTimeout(() => {
-        hideToast();
-      }, toastAppearenceDuration);
-    }
-  }, [toastVisible]);
-}
+  clearable: boolean;
+};
 
 export default function ToastBody(
-  {
-    toastAppearenceDuration,
-  }: {
-    toastAppearenceDuration: number;
-  } = { toastAppearenceDuration: 5_000 }
+  { toastAppearenceDuration, clearable }: ToastBodyProps = {
+    toastAppearenceDuration: 5_000,
+    clearable: true,
+  }
 ) {
   const { toastVisible, hideToast } = useToastContext();
-  useHideToastBodyOnTimeout({
+  const { flushAndHideToast } = useHideToastBodyOnTimeout({
     toastAppearenceDuration,
     toastVisible,
     hideToast,
@@ -47,27 +33,10 @@ export default function ToastBody(
         }
       )}
     >
-      <ToastBodyHeading />
-      <ToastBodyContent />
-    </div>
-  );
-}
-
-function ToastBodyHeading() {
-  return <h3 className="text-xl font-bold">Hello!!! Toast is ready!!</h3>;
-}
-
-function ToastBodyContent() {
-  return (
-    <div className="flex flex-col w-full h-full ">
-      <p>Content:</p>
-      <Image
-        src="/cat.png"
-        alt="Sitting cat"
-        className="w-full"
-        width={250}
-        height={170}
+      <ToastBodyHeadingUI
+        {...{ clearable, clear: flushAndHideToast, classNameIcon: "!text-2xl" }}
       />
+      <ToastBodyContentUI />
     </div>
   );
 }

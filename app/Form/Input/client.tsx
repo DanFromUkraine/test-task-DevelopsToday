@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { AvailableInputTypes } from "./types";
-import { ClearButtonUI } from "./UI";
+import { ClearButtonUI } from "@/app/lib/commonComponents/clearButton";
 
 export function useInputType(defaultInputType: AvailableInputTypes) {
   const isPasswordButtonVisible = defaultInputType === "password";
@@ -34,8 +34,6 @@ export function ClearButton({ clearable }: { clearable: boolean }) {
 
 export function InputBody({ currentInputType }: { currentInputType: string }) {
   const { register } = useFormContext();
-
-    
 
   return (
     <input

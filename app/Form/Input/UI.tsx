@@ -27,21 +27,3 @@ export function InputNameUI() {
   );
 }
 
-export function ClearButtonUI({
-  clear,
-  clearable,
-}: {
-  clear: () => void;
-  clearable: boolean;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={clear}
-      className={clsx({ hidden: !clearable })}
-    >
-      <IoClose className="text-xl" />
-    </button>
-  );
-}
-

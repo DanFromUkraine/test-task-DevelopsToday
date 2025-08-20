@@ -45,12 +45,13 @@ export default function ToastBody(
       className={clsx(
         "toast w-full h-fit border-2 border-black rounded-xl p-8",
         {
-          "slide-out-x":
+          "toast--leave":
             !toastVisible && animationType === "slide" && canBeVisible,
-          "slide-in-x": toastVisible && animationType === "slide",
-          fadeIn: toastVisible && animationType === "fade",
-          fadeOut: !toastVisible && animationType === "fade" && canBeVisible,
-          "!flex": canBeVisible,
+          "toast--enter": toastVisible && animationType === "slide",
+          "toast-transition show": toastVisible && animationType === "fade",
+          "toast-transition hide":
+            !toastVisible && animationType === "fade" && canBeVisible,
+          // "!opacity-100": canBeVisible,
         }
       )}
     >

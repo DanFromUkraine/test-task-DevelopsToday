@@ -1,89 +1,79 @@
 @import "tailwindcss";
 
-@keyframes slideFromRightX {
+:root {
+  --toast-in-duration: 300ms;
+  --toast-out-duration: 220ms;
+}
+
+@keyframes toast-slide-in {
   from {
-    transform: translateX(350px);
+    transform: translateX(120%);
     opacity: 0;
-    bottom: 1rem;
-    display: flex;
   }
   to {
     transform: translateX(0);
     opacity: 1;
-    display: flex;
   }
 }
-
-@keyframes slideToRightX {
+@keyframes toast-slide-out {
   from {
     transform: translateX(0);
     opacity: 1;
-    display: flex;
   }
   to {
-    transform: translateX(400px);
+    transform: translateX(120%);
     opacity: 0;
-    display: flex;
   }
 }
 
-@keyframes fadeIn {
+@keyframes toast-fade-in {
   from {
     opacity: 0;
-    right: 1rem;
-    display: flex;
   }
   to {
     opacity: 1;
-    right: 1rem;
-    display: flex;
   }
 }
-
-@keyframes fadeOut {
+@keyframes toast-fade-out {
   from {
     opacity: 1;
-    right: 1rem;
-    display: flex;
   }
   to {
     opacity: 0;
-    right: 1rem;
-    display: flex;
+    z-index: -999;
   }
 }
 
 @layer utilities {
   .toast {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
-
-    z-index: 9999;
-    max-width: 28rem;
-    width: auto;
-    will-change: transform, opacity;
-    pointer-events: auto;
-    background-color: white;
+    @apply fixed bottom-4 right-4 z-[9999] max-w-md w-auto flex flex-col bg-white shadow-lg;
+    transform: translateX(120%);
     opacity: 0;
-    display: none;
-    flex-direction: column;
+    will-change: transform, opacity;
+    pointer-events: none;
   }
 
-  .slide-in-x {
-    animation: slideFromRightX 300ms ease-out forwards;
-    transform-origin: right;
+  .toast--enter {
+    animation: toast-slide-in var(--toast-in-duration) forwards;
+    pointer-events: auto;
+  }
+  .toast--leave {
+    animation: toast-slide-out var(--toast-out-duration) forwards;
   }
 
-  .slide-out-x {
-    animation: slideToRightX 240ms ease-in forwards;
-    transform-origin: right;
+  .toast-transition {
+    transform: translateX(0);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--toast-in-duration) linear;
   }
 
-  .fadeIn {
-    animation: fadeIn 300ms ease-out;
+  .toast-transition.show {
+    animation: toast-fade-in var(--toast-in-duration) linear forwards;
+    pointer-events: auto;
   }
-  .fadeOut {
-    animation: fadeOut 240ms ease-in;
+  .toast-transition.hide {
+    animation: toast-fade-out var(--toast-out-duration) linear forwards;
+    pointer-events: none;
   }
 }

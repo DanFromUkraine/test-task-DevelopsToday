@@ -4,8 +4,19 @@ import clsx from "clsx";
 import { useSidebarContext } from "../SidebarContext/context";
 import { SubMenuContainer } from "./client";
 import { MenuItemUI } from "./UI";
+import { Menu } from "..";
 
-export default function SidebarBody() {
+function RenderSubMenusAndSubItems({ list }: { list: Menu }) {
+  return list.map((item, i) => {
+    if (typeof item === "string") {
+      return <MenuItemUI key={i} textContent={item} />;
+    } else {
+      return <SubMenuContainer key={i} {...item} />;
+    }
+  });
+}
+
+export default function SidebarBody({ list }: { list: Menu }) {
   const { sidebarShown } = useSidebarContext();
 
   return (
@@ -13,24 +24,12 @@ export default function SidebarBody() {
       className={clsx(
         "flex flex-col w-full h-screen px-4 gap-2 absolute pt-20 right-0 border-l will-change-transform border-black",
         {
-          "slide-out-x": !sidebarShown,
-          "slide-in-x": sidebarShown,
+          "toast--leave": !sidebarShown,
+          "toast--enter": sidebarShown,
         }
       )}
     >
-      <SubMenuContainer
-        subMenuHeading="SubMenu 1"
-        subItems={["subItem1", "subItem2", "subItem4"]}
-      />
-      <SubMenuContainer
-        subMenuHeading="SubMenu 2"
-        subItems={["subItem5", "subItem6", "subItem7"]}
-      />
-      <SubMenuContainer
-        subMenuHeading="Submenu 3"
-        subItems={["subItem8", "subItem9", "subItem10"]}
-      />
-      <MenuItemUI textContent="ending subItem" />
+      <RenderSubMenusAndSubItems list={list} />
     </div>
   );
 }

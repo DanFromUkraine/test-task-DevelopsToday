@@ -54,5 +54,3 @@ toastAppearenceDuration = 5 000ms
 clearable = true
 animationType = fade
 ![alt text](image-11.png)
-
-

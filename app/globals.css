@@ -3,40 +3,87 @@
 @keyframes slideFromRightX {
   from {
     transform: translateX(350px);
-  } /* зміщення вправо на 250px */
+    opacity: 0;
+    bottom: 1rem;
+    display: flex;
+  }
   to {
     transform: translateX(0);
+    opacity: 1;
+    display: flex;
   }
 }
 
 @keyframes slideToRightX {
   from {
     transform: translateX(0);
+    opacity: 1;
+    display: flex;
   }
   to {
     transform: translateX(400px);
+    opacity: 0;
+    display: flex;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    right: 1rem;
+    display: flex;
+  }
+  to {
+    opacity: 1;
+    right: 1rem;
+    display: flex;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    right: 1rem;
+    display: flex;
+  }
+  to {
+    opacity: 0;
+    right: 1rem;
+    display: flex;
   }
 }
 
 @layer utilities {
   .toast {
     position: fixed;
-    right: 1rem;
     bottom: 1rem;
+    right: 1rem;
+
     z-index: 9999;
     max-width: 28rem;
     width: auto;
     will-change: transform, opacity;
     pointer-events: auto;
     background-color: white;
+    opacity: 0;
+    display: none;
+    flex-direction: column;
   }
 
   .slide-in-x {
     animation: slideFromRightX 300ms ease-out forwards;
     transform-origin: right;
   }
+
   .slide-out-x {
     animation: slideToRightX 240ms ease-in forwards;
     transform-origin: right;
+  }
+
+  .fadeIn {
+    animation: fadeIn 300ms ease-out;
+  }
+  .fadeOut {
+    animation: fadeOut 240ms ease-in;
   }
 }

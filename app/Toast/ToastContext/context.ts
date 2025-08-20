@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
 import { createContext, use } from "react";
 
 export type ToastContextShape = {
-  toastVisible: boolean;
+  toastVisible: boolean | null;
   showToast: () => void;
   hideToast: () => void;
 };
 
 export const ToastContext = createContext<ToastContextShape>({
-  toastVisible: false,
+  toastVisible: null,
   showToast() {},
   hideToast() {},
 });

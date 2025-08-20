@@ -8,7 +8,7 @@ export default function ToastContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const [toastVisible, setToastVisible] = useState(() => false);
+  const [toastVisible, setToastVisible] = useState<boolean | null>(() => null);
 
   const showToast = useCallback(() => {
     setToastVisible(true);

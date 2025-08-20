@@ -101,6 +101,8 @@ Example State 1
 ]
 ```
 
+![alt text](image-16.png)
+
 Example State 2
 
 1. visibleByDefault: `true`
@@ -117,6 +119,8 @@ Example State 2
 ]
 ```
 
+![alt text](image-17.png)
+
 ---
 
 I spent about 2 hours setting up Storybook (I really hate Webpack), because by default it tried to compile using the Next.js Webpack (Turbopack?) compiler. After reinstalling node_modules five times and switching the framework from "next" to "next-vite", it finally started working.
@@ -126,6 +130,9 @@ Overall, I enjoyed this test assessment — it forced me to solve problems I had
 I completed almost all of the requirements from the instructions, including the bonus ones.
 
 Looking forward to your enhance feedback!
+
+
+Слава Україні!
 
 
 ```

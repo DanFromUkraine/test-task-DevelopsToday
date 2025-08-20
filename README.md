@@ -1,4 +1,4 @@
-# Components Showcase
+# Test assessment
 
 ## Setup
 
@@ -11,7 +11,7 @@ pnpm dev
 
 # Open Storybook admin panel
 pnpm storybook
-
+```
 
 ---
 
@@ -24,36 +24,20 @@ This is a simple input component built with react-hook-form. It uses FormProvide
 
 It has 6 state combinations; below are 3 examples.
 
-State 1
+State 1:
 
-input type: text
-
-clearable: false
-
-
-
-
+1. input type: `"text"`
+2. clearable: `false`
 
 State 2
 
-input type: password
-
-clearable: true
-
-
-
-
+1. input type: `"password"`
+2. clearable: `true`
 
 State 3
 
-input type: number
-
-clearable: false
-
-
-
-
-
+1. input type: `"number"`
+2. clearable: `false`
 
 ---
 
@@ -68,37 +52,21 @@ This component supports many configurations (especially around duration); below 
 
 State 1
 
-toastAppearanceDuration: 5000 ms
-
-clearable: true
-
-animationType: slide
-
-
-
+1. toastAppearanceDuration (miliseconds): `5000`
+2. clearable: `true`
+3. animationType: `"slide"`
 
 State 2
 
-toastAppearanceDuration: 3000 ms
-
-clearable: false
-
-animationType: slide
-
-
-
+1. toastAppearanceDuration (miliseconds): `3000`
+2. clearable: `false`
+3. animationType: `slide`
 
 State 3
 
-toastAppearanceDuration: 5000 ms
-
-clearable: true
-
-animationType: fade
-
-
-
-
+1. toastAppearanceDuration (miliseconds): `5000`
+2. clearable: `true`
+3. animationType: `"fade"`
 
 ---
 
@@ -111,10 +79,10 @@ This component includes an animation for expanding and collapsing submenus imple
 
 Example State 1
 
-visibleByDefault: true
+1. visibleByDefault: `true`
+2. list:
 
-list:
-
+```TypeScript
 [
   {
     subMenuHeading: "Sub menu 1",
@@ -131,29 +99,23 @@ list:
   "item 10",
   "item 11",
 ]
-
-
-
+```
 
 Example State 2
 
-visibleByDefault: true
+1. visibleByDefault: `true`
+2. list:
 
-list:
-
+```TypeScript
 [
-  "item 1",
-  "item 2",
-  "item 3",
-  "item 4",
-  "item 5",
-  "item 6",
+"item 1",
+"item 2",
+"item 3",
+"item 4",
+"item 5",
+"item 6",
 ]
-
-
-
-
-
+```
 
 ---
 
@@ -164,3 +126,7 @@ Times are approximate and exclude Storybook setup time (unless specified).
 Property names shown above reflect the component API used in the examples (e.g. toastAppearanceDuration, clearable, animationType).
 
 For more examples and interactive testing, open Storybook with pnpm storybook.
+
+```
+
+```

@@ -8,7 +8,7 @@ console.log(`storybook loaded!
     `);
 
 const config: StorybookConfig = {
-  stories: ["../app/Form/form.stories.tsx"],
+  stories: ["../app/**/*.stories.tsx"],
   framework: "@storybook/nextjs-vite",
 };
 

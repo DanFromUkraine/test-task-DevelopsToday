@@ -4,13 +4,15 @@ import { ClearButton, InputBody, useInputType } from "./client";
 import { AvailableInputTypes } from "./types";
 import { InputNameUI, ToggleVisibilityButtonUI } from "./UI";
 
+export type InputContainerProps = {
+  inputType: AvailableInputTypes;
+  clearable: boolean;
+};
+
 export default function InputContainer({
   inputType,
   clearable,
-}: {
-  inputType: AvailableInputTypes;
-  clearable: boolean;
-}) {
+}: InputContainerProps) {
   const { currentInputType, toggleInputType, isPasswordButtonVisible } =
     useInputType(inputType);
 

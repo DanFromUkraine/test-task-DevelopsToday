@@ -29,15 +29,19 @@ State 1:
 1. input type: `"text"`
 2. clearable: `false`
 
+![alt text](localhost_6006__path=_story_components-form--default.png)
+
 State 2
 
 1. input type: `"password"`
 2. clearable: `true`
+   ![alt text](<localhost_6006__path=_story_components-form--default (1).png>)
 
 State 3
 
 1. input type: `"number"`
 2. clearable: `false`
+   ![alt text](<localhost_6006__path=_story_components-form--default (2).png>)
 
 ---
 
@@ -50,23 +54,28 @@ Initially this looked like a simple task, but the fade animation added complexit
 
 This component supports many configurations (especially around duration); below are 3 examples.
 
+![alt text](image-2.png)
+
 State 1
 
 1. toastAppearanceDuration (miliseconds): `5000`
 2. clearable: `true`
 3. animationType: `"slide"`
+   ![alt text](image-1.png)
 
 State 2
 
 1. toastAppearanceDuration (miliseconds): `3000`
 2. clearable: `false`
 3. animationType: `slide`
+   ![alt text](image-3.png)
 
 State 3
 
 1. toastAppearanceDuration (miliseconds): `5000`
 2. clearable: `true`
 3. animationType: `"fade"`
+   ![alt text](image-4.png)
 
 ---
 
@@ -76,6 +85,8 @@ Estimated time spent: ~3.5 hours
 
 Description
 This component includes an animation for expanding and collapsing submenus implemented with requestAnimationFrame. I implemented a JS-based height measurement and animation because transitioning reliably from height: 0 to height: auto with pure CSS was not suitable for this use case.
+
+![alt text](image-5.png)
 
 Example State 1
 
@@ -131,9 +142,7 @@ I completed almost all of the requirements from the instructions, including the 
 
 Looking forward to your enhance feedback!
 
-
 Слава Україні!
-
 
 ```
 
